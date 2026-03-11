@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sneha Prasad Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(270deg,#0f172a,#020617,#1e293b);
+background-size:600% 600%;
+animation:bgMove 15s ease infinite;
+color:white;
+scroll-behavior:smooth;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:20px;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(8px);
+display:flex;
+justify-content:center;
+z-index:100;
+}
+
+nav a{
+color:white;
+margin:0 20px;
+text-decoration:none;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#38bdf8;
+}
+
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:80px 20px;
+}
+
+h1{
+font-size:60px;
+margin-bottom:20px;
+}
+
+.typing{
+color:#38bdf8;
+font-size:24px;
+}
+
+.about{
+max-width:700px;
+line-height:1.6;
+}
+
+.skills{
+width:60%;
+}
+
+.skill{
+margin:15px 0;
+}
+
+.bar{
+background:#1e293b;
+border-radius:10px;
+overflow:hidden;
+}
+
+.bar div{
+height:10px;
+background:#38bdf8;
+animation:load 2s ease;
+}
+
+@keyframes load{
+from{width:0}
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+width:80%;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:15px;
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.05);
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+button{
+margin-top:20px;
+padding:12px 30px;
+border:none;
+border-radius:10px;
+background:#38bdf8;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+footer{
+padding:30px;
+text-align:center;
+opacity:0.6;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+
+<h1>Sneha Prasad</h1>
+<div class="typing" id="typing"></div>
+
+<button onclick="document.getElementById('projects').scrollIntoView()">View My Work</button>
+
+</section>
+
+<section id="about">
+
+<h1>About Me</h1>
+
+<p class="about">
+I am interested in predictive analytics, statistics and data-driven research.
+This portfolio showcases my academic work, projects and analytical skills.
+</p>
+
+</section>
+
+<section id="skills">
+
+<h1>Skills</h1>
+
+<div class="skills">
+
+<div class="skill">
+Python
+<div class="bar"><div style="width:80%"></div></div>
+</div>
+
+<div class="skill">
+Statistics
+<div class="bar"><div style="width:85%"></div></div>
+</div>
+
+<div class="skill">
+Data Analysis
+<div class="bar"><div style="width:75%"></div></div>
+</div>
+
+<div class="skill">
+Machine Learning
+<div class="bar"><div style="width:65%"></div></div>
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h1>Projects</h1>
+
+<div class="projects">
+
+<div class="card">
+<h3>Predictive Analytics</h3>
+<p>Inventory optimisation for automotive spare parts.</p>
+</div>
+
+<div class="card">
+<h3>Advanced Statistics</h3>
+<p>Statistical modelling and probability analysis.</p>
+</div>
+
+<div class="card">
+<h3>Data Dashboard</h3>
+<p>Data visualisation using Python and analytics tools.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h1>Contact</h1>
+
+<p>Email: your@email.com</p>
+
+</section>
+
+<footer>
+© 2026 Sneha Prasad
+</footer>
+
+<script>
+
+const text = [
+"Data Analytics Enthusiast",
+"Predictive Analytics Researcher",
+"Statistics & Machine Learning"
+]
+
+let count=0
+let index=0
+let current=""
+let letter=""
+
+function type(){
+
+if(count===text.length){
+count=0
+}
+
+current=text[count]
+letter=current.slice(0,++index)
+
+document.getElementById("typing").textContent=letter
+
+if(letter.length===current.length){
+count++
+index=0
+setTimeout(type,1200)
+}else{
+setTimeout(type,80)
+}
+
+}
+
+type()
+
+</script>
+
+</body>
+</html>
