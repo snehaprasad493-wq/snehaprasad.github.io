@@ -19,14 +19,14 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:linear-gradient(270deg,#0f172a,#020617,#1e293b);
-background-size:600% 600%;
-animation:bgMove 15s ease infinite;
 color:white;
+background:linear-gradient(-45deg,#ff0080,#7928ca,#00c6ff,#00ffa2);
+background-size:400% 400%;
+animation:gradient 12s ease infinite;
 scroll-behavior:smooth;
 }
 
-@keyframes bgMove{
+@keyframes gradient{
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
@@ -36,24 +36,25 @@ nav{
 position:fixed;
 top:0;
 width:100%;
-padding:20px;
-background:rgba(0,0,0,0.5);
-backdrop-filter:blur(8px);
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
 display:flex;
 justify-content:center;
+padding:20px;
 z-index:100;
 }
 
 nav a{
-color:white;
 margin:0 20px;
+color:white;
 text-decoration:none;
 font-weight:500;
 transition:0.3s;
 }
 
 nav a:hover{
-color:#38bdf8;
+color:#00fff7;
+transform:scale(1.2);
 }
 
 section{
@@ -69,16 +70,49 @@ padding:80px 20px;
 h1{
 font-size:60px;
 margin-bottom:20px;
+text-shadow:0 0 20px rgba(255,255,255,0.8);
 }
 
 .typing{
-color:#38bdf8;
-font-size:24px;
+font-size:26px;
+color:#00fff7;
 }
 
-.about{
-max-width:700px;
-line-height:1.6;
+button{
+margin-top:30px;
+padding:15px 40px;
+border:none;
+border-radius:30px;
+font-size:16px;
+background:#00fff7;
+color:black;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.15);
+box-shadow:0 0 20px #00fff7;
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+width:80%;
+}
+
+.card{
+background:rgba(0,0,0,0.5);
+padding:30px;
+border-radius:20px;
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-15px) scale(1.05);
+box-shadow:0 0 30px rgba(0,255,255,0.7);
 }
 
 .skills{
@@ -86,18 +120,18 @@ width:60%;
 }
 
 .skill{
-margin:15px 0;
+margin:20px 0;
 }
 
 .bar{
-background:#1e293b;
+background:rgba(0,0,0,0.4);
 border-radius:10px;
 overflow:hidden;
 }
 
 .bar div{
-height:10px;
-background:#38bdf8;
+height:12px;
+background:#00fff7;
 animation:load 2s ease;
 }
 
@@ -105,44 +139,10 @@ animation:load 2s ease;
 from{width:0}
 }
 
-.projects{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-width:80%;
-}
-
-.card{
-background:#1e293b;
-padding:25px;
-border-radius:15px;
-transition:0.4s;
-}
-
-.card:hover{
-transform:translateY(-10px) scale(1.05);
-box-shadow:0 20px 40px rgba(0,0,0,0.4);
-}
-
-button{
-margin-top:20px;
-padding:12px 30px;
-border:none;
-border-radius:10px;
-background:#38bdf8;
-font-weight:600;
-cursor:pointer;
-transition:0.3s;
-}
-
-button:hover{
-transform:scale(1.1);
-}
-
 footer{
 padding:30px;
 text-align:center;
-opacity:0.6;
+opacity:0.7;
 }
 
 </style>
@@ -172,9 +172,9 @@ opacity:0.6;
 
 <h1>About Me</h1>
 
-<p class="about">
-I am interested in predictive analytics, statistics and data-driven research.
-This portfolio showcases my academic work, projects and analytical skills.
+<p style="max-width:700px">
+I am passionate about data analytics, statistics and predictive analytics.  
+This colorful animated portfolio showcases my academic projects and skills.
 </p>
 
 </section>
@@ -222,12 +222,12 @@ Machine Learning
 
 <div class="card">
 <h3>Advanced Statistics</h3>
-<p>Statistical modelling and probability analysis.</p>
+<p>Statistical modelling project.</p>
 </div>
 
 <div class="card">
 <h3>Data Dashboard</h3>
-<p>Data visualisation using Python and analytics tools.</p>
+<p>Data visualisation using Python.</p>
 </div>
 
 </div>
@@ -248,7 +248,7 @@ Machine Learning
 
 <script>
 
-const text = [
+const text=[
 "Data Analytics Enthusiast",
 "Predictive Analytics Researcher",
 "Statistics & Machine Learning"
@@ -275,7 +275,7 @@ count++
 index=0
 setTimeout(type,1200)
 }else{
-setTimeout(type,80)
+setTimeout(type,70)
 }
 
 }
