@@ -1,0 +1,51 @@
+
+body {
+  margin:0;
+  font-family: 'Courier New', monospace;
+  background:black;
+  color:#00ffcc;
+  overflow-x:hidden;
+}
+
+canvas {
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+}
+
+header {
+  text-align:center;
+  padding:40px;
+}
+
+nav {
+  text-align:center;
+  margin-bottom:20px;
+}
+
+nav a {
+  color:#00ffcc;
+  margin:10px;
+  text-decoration:none;
+}
+
+.card {
+  background:#111;
+  padding:20px;
+  margin:20px;
+  border-radius:10px;
+  box-shadow:0 0 15px #00ffcc55;
+  animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+button {
+  position:fixed;
+  top:10px;
+  right:10px;
+}
